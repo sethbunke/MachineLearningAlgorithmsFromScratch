@@ -1,0 +1,20 @@
+# Set the default figure size
+plt.rcParams['figure.figsize'] = [24.0, 14.0]
+
+# Load the image
+img = cv2.imread('./images/surf.jpg')
+
+# Convert the image to RGB
+original_image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+# We resize the image to the input width and height of the first layer of the network.    
+resized_image = cv2.resize(original_image, (m.width, m.height))
+
+# Display the images
+plt.subplot(121)
+plt.title('Original Image')
+plt.imshow(original_image)
+plt.subplot(122)
+plt.title('Resized Image')
+plt.imshow(resized_image)
+plt.show()
