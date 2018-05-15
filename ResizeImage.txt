@@ -18,3 +18,5 @@ plt.subplot(122)
 plt.title('Resized Image')
 plt.imshow(resized_image)
 plt.show()
+
+

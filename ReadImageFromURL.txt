@@ -1,0 +1,4 @@
+from skimage import io
+
+image = io.imread(url)
+cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
