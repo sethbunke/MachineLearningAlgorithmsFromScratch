@@ -1,0 +1,8 @@
+Backpropagation Theory
+Since partial derivatives are the key mathematical concept used in backpropagation, it's important that you feel confident in your ability to calculate them. Once you know how to calculate basic derivatives, calculating partial derivatives is easy to understand.
+For more information on partial derivatives use the following link
+
+For calculation purposes in future quizzes of the lesson, you can use the following link as a reference for common derivatives.
+
+In the backpropagation process we minimize the network error slightly with each iteration, by adjusting the weights. The following video will help you understand the mathematical process we use for computing these adjustments.
+
