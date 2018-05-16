@@ -6,3 +6,15 @@ For calculation purposes in future quizzes of the lesson, you can use the follow
 
 In the backpropagation process we minimize the network error slightly with each iteration, by adjusting the weights. The following video will help you understand the mathematical process we use for computing these adjustments.
 
+1 Cross Entropy Error with Logistic Activation
+In a classification task with two classes, it is standard to use a neural network architecture with
+a single logistic output unit and the cross-entropy loss function (as opposed to, for example, the
+sum-of-squared loss function). With this combination, the output prediction is always between zero
+and one, and is interpreted as a probability. Training corresponds to maximizing the conditional
+log-likelihood of the data, and as we will see, the gradient calculation simplifies nicely with this
+combination.
+We can generalize this slightly to the case where we have multiple, independent, two-class classi-
+fication tasks. In order to demonstrate the calculations involved in backpropagation, we consider
+a network with a single hidden layer of logistic units, multiple logistic output units, and where the
+total error for a given example is simply the cross-entropy error summed over the output units.
+
