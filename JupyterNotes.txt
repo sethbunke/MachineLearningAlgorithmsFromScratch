@@ -1,0 +1,71 @@
+Jupyter Intro
+Jupyter notebook is an environment for combining interactive coding and text in a webbrowser. This allows us to easily share code as well as narrative around that code. An example that was popular in the scientific community was the discovery of gravitational waves.
+
+The name Jupyter is a rebranding of an open source project previously known as iPython Notebook. The rebranding was to emphasize that although the backend is written in Python, it supports various kernals to run other languages, including Julia (the "Ju" portion), Python ("pyt"), and R ("er"). All popular data science programming languages.
+
+The architecture of Jupyter includes a server running various kernals. Using a notebook we can interact with a kernal. Typically we use a webbrowser to do this, but there are other iterfaces, such as an emacs mode (ein).
+
+Using Jupyter
+After we create a notebook, we are presented with a page with an empty cell. The cell will have a blue outline, ane the text:
+
+In [ ]: 
+on the side. The blue outline indicates that we are in command mode. There are two modes in Jupyter, command mode and edit mode.
+
+To enter edit mode simply hit the enter or return key. You will notice that the outline will change to green. In edit mode, with a Python kernel, we can type Python code. Type:
+
+print("hello world")
+You will notice that unlike a normal Python REPL, this will note print anything after hitting return again. To execute the cell, you need to hold down control and hit enter (C-Enter). This will run the code, print the results of the cell and put you back into edit mode.
+
+Edit Mode
+To enter Edit Mode you need to click on a cell or hit enter when it is surrounded by the blue outline. You will see that it goes green if you are in edit mode. In edit mode you have basic editing functionality. A few keys to know:
+
+Ctr-Enter - Run cell (execute Python code, render Markdown)
+ESC - Go back to command mode
+TAB - Tab completion
+Shift-TAB - Bring up tooltip (ESC to dismiss)
+Command Mode
+Command Mode gives to the ability to create, copy, paste, move, and execute cells. A few keys to know:
+
+h - Bring up help (ESC to dismiss)
+b - Create cell below
+a - Create cell above
+c - Copy cell
+v - Paste cell below
+Enter - Go into Edit Mode
+m - Change cell type to Markdown
+y - Change cell type to code
+ii - Interrupt kernel
+oo - Restart kernel
+Cell Types
+Code
+Markdown
+Markdown
+Can make italicized, bold, and monospaced text:
+
+Can make *italicized*, **bold**, and ``monospaced text``
+Headers:
+
+# H1
+## H2
+### H3
+Lists:
+
+* First item
+* Second item
+Code:
+
+If you indent by four spaces you have code:
+
+    def add(x, y):
+        return x + yt
+Cell Magic
+type and run %lsmagic in a cell.
+
+Common magics include:
+
+%%time - time how long it takes to run cell
+%%! - run shell command
+%matplotlib inline - show matplotlib plots
+IPython Help
+Add ? after function, method, etc for documentation (can also run shift-tab 4 times in notebook). Add ?? after function, method, etc to see the source.
+
