@@ -1,0 +1,19 @@
+%%time
+# Resampling data from minute interval to day
+bit_df = pd.read_csv('../data/coinbaseUSD_1-min_data_2014-12-01_to_2018-01-08.csv')
+# Convert unix time to datetime
+bit_df['date'] = pd.to_datetime(bit_df.Timestamp, unit='s')
+# Reset index
+bit_df = bit_df.set_index('date')
+# Rename columns so easier to code
+bit_df = bit_df.rename(columns={'Open':'open', 'High': 'hi', 'Low': 'lo', 
+                       'Close': 'close', 'Volume_(BTC)': 'vol_btc',
+                       'Volume_(Currency)': 'vol_cur', 
+                       'Weighted_Price': 'wp', 'Timestamp': 'ts'})
+# Resample and only use recent samples that aren't missing
+bit_df = bit_df.resample('d').agg({'open': 'first', 'hi': 'max', 
+    'lo': 'min', 'close': 'last', 'vol_btc': 'sum',
+    'vol_cur': 'sum', 'wp': 'mean', 'ts': 'min'}).iloc[-1000:]
+bit_df['buy'] = (bit_df.close.shift(-1) > bit_df.close).astype(int)
+# drop last row as it is not complete
+bit_df = bit_df.iloc[:-1]
